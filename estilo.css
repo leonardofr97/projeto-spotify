@@ -1,0 +1,245 @@
+/*
+@author leonardofr
+*/
+
+/* layout */
+
+/* para que os seguintes elementos ocupem todo o espaço na vertical */
+
+html, body, .capa {
+    height: 100%;
+    /* só exibirá uma barra de rolagem quando necessário */
+    overflow: auto;
+}
+body {
+    /* aplicando os efeitos de background, background-attachment: fixed; para fixar a img de background, que fique parada ao rolar a pagina */
+    background: url('imagens/capa.png'), url('imagens/ruido.png'), linear-gradient(50deg, #ff4169, #7c26f8);
+    background-attachment: fixed;
+    font-family: Helvetica, Arial, sans-serif;
+    /* para esconder a barra de rolagem horizontal */
+    overflow-x: hidden;
+}
+/* -- Barra de navegação -- */
+
+.img-logo {
+    height: 40px;
+    width: 132px;
+    display: block;
+    /* no-repeat para que a img não se repita ao lado */
+    background: url('imagens/spotify.svg') no-repeat;
+    /* contain irá usar as dimensões definidas acima */
+    background-size: contain;
+    /* transparent para o texto spotify que será mantido caso a img não carregue */
+    color: transparent;
+}
+nav.navbar-transparente {
+    padding: 15px 0px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+}
+.navbar-brand {
+    padding: 5px 15px;
+}
+.divisor {
+    width: 1px;
+    height: 16px;
+    background: white;
+    margin: 16px 10px;
+}
+.botao-menu {
+    font-size: 20px;
+    color: white;
+}
+.menu-formatacao {
+    font-weight: bold;
+}
+/* formatação dos links da navbar */
+
+.navbar-inverse .navbar-nav>li>a, footer .nav a {
+    color: white;
+}
+.navbar-inverse .navbar-nav>li>a:hover, footer .nav a:hover {
+    color: #9bf0e1;
+    background: none;
+}
+/* Imagem de capa */
+
+/* table, table-cell, middle ajudam na centralização dos elementos de capa */
+
+.capa {
+    display: table;
+    width: 100%;
+}
+.texto-capa {
+    text-align: center;
+    color: white;
+    display: table-cell;
+    vertical-align: middle;
+}
+/* Botões */
+
+.btn-custom {
+    color: white;
+    border-radius: 500px;
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+    /* foram definidos para diferentes devices com media queries ao final,
+pois os botões estavam muito juntos na view em xs */
+    /*    padding: 10px 35px;
+    margin: 0px 15px; */
+    text-transform: uppercase;
+    /* para uma transição de cor mais suave ao passar o cursor sobre o botão */
+    transition: background 0.4s, color 0.4s;
+    font-weight: bold;
+}
+.btn-roxo {
+    background: #7c25f8;
+}
+.btn-roxo:hover {
+    background-color: #6207e3;
+    color: white;
+}
+.btn-branco {
+    border: 2px solid white;
+}
+.btn-branco:hover {
+    background-color: white;
+    color: black;
+}
+/* seção serviços */
+
+#servicos {
+    background: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.albuns {
+    padding: 10px 0px 10px 0px;
+}
+/* recursos */
+
+#recursos {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+}
+#recursos p {
+    font-weight: bold;
+}
+/* para rotacionar as img dos iphones */
+
+.rotacionar {
+    transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    /* IE 9 */
+    -webkit-transform: rotate(30deg);
+    /* Chrome, Safari, Opera */
+    padding-left: 80px;
+    padding-top: 10px;
+}
+/* rodapé */
+
+footer {
+    background: #000;
+    padding: 50px 0px 20px 0px;
+    /* para que o rodapé fique a frente dos elementos acima */
+    position: relative;
+    font-weight: bold;
+}
+/* para que fiquem um ao lado do outro */
+
+.item-rede-social {
+    float: right;
+}
+/* tipografia */
+
+h1 {
+    /* foi p/ media queries, fonte muito grande em xs    
+    font-size: 100px; */
+    font-weight: 900;
+    /* espaçamento entre as letras */
+    letter-spacing: -0.05em;
+    margin-bottom: 50px;
+}
+h2 {
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+h3 {
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+#servicos h2, #servicos h3 {
+    color: #7c25f8;
+}
+#recursos h3 {
+    color: #9bf0e1;
+}
+#rodape h4 {
+    color: #919496;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* Media queries (VER DOCS sobre)*/
+
+/* < 338px */
+
+@media screen and (max-width: 338px) {
+    h1 {
+        font-size: 40px;
+    }
+    .btn-custom {
+        font-size: 12px;
+        width: 250px;
+        margin: 10px 20px;
+    }
+    #servicos h2, #recursos h2 {
+        font-size: 40px;
+    }
+    .rotacionar {
+        transform: none;
+    }
+}
+/* xs < 768px */
+
+/* px modificado soh pra testes */
+
+@media screen and (min-width: 339px) {
+    h1 {
+        font-size: 50px;
+    }
+    .btn-custom {
+        margin: 10px 15px;
+    }
+    .espac-img {
+        padding-top: 30px;
+    }
+}
+/* sm */
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 70px;
+    }
+    .espac-img {
+        padding-top: 30px;
+    }
+}
+/* md */
+
+@media screen and (min-width: 992px) {
+    h1 {
+        font-size: 80px;
+    }
+}
+/* lg */
+
+@media screen and (min-width: 1200px) {
+    h1 {
+        font-size: 100px;
+    }
+}
+/* fim media queries */

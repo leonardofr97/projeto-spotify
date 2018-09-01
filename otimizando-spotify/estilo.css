@@ -1,0 +1,46 @@
+/* p {
+    font-size: 20px;
+    color: blue;
+} */
+
+/* utilizando media queries, define o tipo de mídia e opcionalmente o tamanho máximo ou mínimo em px */
+
+/*
+@media screen and (max-width: 767px) {
+    body {
+        background: red;
+    }
+    p {
+        font-size: 50px;
+    }
+}
+@media screen and (min-width: 768px) {
+    body {
+        background: blue;
+    }
+    p {
+        font-size: 100px;
+    }
+}
+@media screen and (min-width: 992px) {
+    body {
+        background: orange;
+    }
+}
+@media screen and (min-width: 1200px) {
+    body {
+        background: black;
+    }
+}
+*/
+
+.item {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    /* overflow define a barra de rolagem que é útil em elementos em que seu conteudo não caibam
+scroll: mostrará uma barra ativa quando necessária ou uma inativa caso não neces.
+auto: mostrará uma quando necessario ou nenhuma caso não neces. 
+    overflow: scroll; */
+    overflow: auto;
+}
